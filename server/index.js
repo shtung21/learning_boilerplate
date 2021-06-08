@@ -1,6 +1,7 @@
 const express = require("express");
+const path = require("path");
 const morgan = require("morgan");
-const bodyParser = require("body-parser");
+// const bodyParser = require("body-parser");
 
 const app = express();
 
@@ -8,7 +9,7 @@ const app = express();
 app.use(morgan("dev"));
 
 //static middleware
-app.use(express.static(path.join(__dirname, "../public/index.html")));
+app.use(express.static(path.join(__dirname, "../public")));
 
 //body parsing middleware
 app.use(express.json());
